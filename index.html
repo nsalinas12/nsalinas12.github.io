@@ -1,1 +1,90 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exercise 3, 4, and 5</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<header class="sticy-header">
+		<h1 class="page-title">Nico's Recipe App</h1>
+		<form class="searchbar-container">
+			<input id="searchbar-input" class="searchbar-input" type="text" placeholder="Search for a recipe">
+			<div class="searchbar-button-container">
+				<button class="searchbar-button-item" type="submit">Search</button>
+			</div>	
+		</form>
+	</header>
+	<main class="isHidden">
+		<section id="overview" class="recipe-overview-section">
+			<figure class="recipe-image-container">
+				<img class="recipe-image-content">
+			</figure>
+			<div class="recipe-header-container">
+				<h1 class="recipe-name-title">[Recipe title goes here]</h1>
+				<div class="recipe-name-details">[Recipe summary goes here]</div>
+				<div class="recipe-name-summary">[Recipe summary goes here]</div>
+			</div>
+		</section>
+		<hr>
+		<div class="ingredients-top-row">
+			<h2>Ingredients</h2>
+			<select class="ingredients-select" id="ingredientSortOptions">
+				<option class="ingredients-sort-option" value="alphabetically">Sort Alphabetically</option>
+				<option class="ingredients-sort-option" value="category">Sort by Ingredient Category</option>
+				<option class="ingredients-sort-option" value="purchased">Sort by Purchased Ingredients</option>
+				<option class="ingredients-sort-option" value="unpurchased">Sort by Unpurchased Ingredients</option>
+			</select>
+		</div>
+		<section id="ingredients" class="ingredient-container">
+			<template id="templateIngredientItem">
+				<article class="ingredient-item">
+					<div class="ingredient-grid-left">
+						<img class="ingredient-image">
+					</div>
+					<div class="ingredient-grid-right">
+						<span class="ingredient-grid-right-top">
+							<p class="ingredient-tag"></p>
+							<div class="ingredient-button"></div>
+						</span>
+						<span class="ingredient-grid-right-bottom">
+							<h3 class="ingredient-name">[ingredient name]</h3>
+							<div class="ingredient-details">[ingredient details]</div>
+						</span>
+					</div>
+					
+				</article>
+			</template>
+		</section>
+		<hr>
+		<div class="instructions-top-row">
+			<h2>Instructions</h2>
+			<div class="instructions-top-row-buttons">
+				<input checked class="instructions-top-row-button-item" type="checkbox" name="ingredients">
+				<label for="ingredients">Show Ingredients</label><br>
+				<input checked class="instructions-top-row-button-item" type="checkbox" name="equipment">
+				<label for="equipment">Show Equipment</label>
+			</div>
+		</div>
+		<section id="instructions" class="instruction-container">
+			<template id="templateInstructionItem">
+				<article class="instruction-item-grid">
+					<div class="instruction-number">1</div>
+					<div class="instruction-content">
+						<p class="instruction-text">[Instruction text goes here]</p>
+						<div class="instruction-images">
+							<div class="instruction-viewer">
+								[ingredient content goes here]
+							</div>
+							<div class="instruction-viewer">
+								[equipment content goes here]
+							</div>
+						</div>
+					</div>
+				</article>
+			</template>
+		</section>
+	</main>
+</body>
+</html>
