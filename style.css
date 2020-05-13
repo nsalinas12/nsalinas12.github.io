@@ -8,6 +8,10 @@ figure {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .image-container {
     display: flex;
     transition: all 0.2s ease-in-out;
