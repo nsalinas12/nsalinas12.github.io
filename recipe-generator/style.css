@@ -18,10 +18,6 @@ h2 {
     margin: 0;
 }
 
-header {
-    margin: 0;
-}
-
 hr {
     border-color: black;
     margin: 2em 0;
@@ -347,6 +343,7 @@ p {
     height: 100%;
     transition: all 0.2s ease-in-out;
     width: 100%;
+    padding: 0 1em;
 }
 
 .searchbar-button-item:hover {
@@ -359,8 +356,10 @@ p {
 .searchbar-container {
     column-gap: 1em;
     display: grid;
-    grid-template-columns: auto 100px;
-    margin-top: 1em;
+    grid-template-columns: auto fit-content(100%);
+    max-width: 80vw;
+    min-width: 80vw;
+    margin: 1em auto auto auto;
 }
 
 .searchbar-input {
@@ -452,7 +451,7 @@ p {
 @media(max-width: 490px) {
     .searchbar-container {
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 80vw;
         row-gap: 1em;
     }
     .searchbar-button-item {
