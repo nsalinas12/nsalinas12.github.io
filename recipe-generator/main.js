@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     parseRecipeResults(dinner_postman_response, "http://www.cookincanuck.com/2013/09/stuffed-sweet-potato-recipe-with-spinach-hummus-feta/");
 });
 
-let API_KEY = '688a61ea646c44f7b50b9945a41dec2e';
+let API_KEY = '1c58d3fa753f4eee81a548c4aadc17fa';
 let INGREDIENT_BASE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
 let EQUIPMENT_BASE_URL = "https://spoonacular.com/cdn/equipment_100x100/"
 
