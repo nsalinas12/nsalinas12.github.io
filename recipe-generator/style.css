@@ -80,6 +80,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 2em;
     row-gap: 1.5em;
+    padding: 1em;
 }
 
 .ingredient-details {
@@ -399,6 +400,7 @@ p {
     top: 0;
     z-index: 1;
     padding: 1em;
+    margin-bottom: 1em;
 }
 
 ::placeholder {
@@ -416,11 +418,7 @@ p {
 
 @media(max-width: 870px) {
     .ingredient-container {
-        column-gap: 1.5em;
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 2em;
-        row-gap: 1.5em;
     }
     .ingredient-grid-left {
         margin: auto;
@@ -437,11 +435,7 @@ p {
 
 @media(max-width: 710px) {
     .ingredient-container {
-        column-gap: 1.5em;
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 2em;
-        row-gap: 1.5em;
     }
     .ingredient-grid-left {
         margin: auto;
@@ -465,11 +459,7 @@ p {
         font-size: 1.5em;
     }
     .ingredient-container {
-        column-gap: 1.5em;
-        display: grid;
         grid-template-columns: repeat(1, 1fr);
-        margin-bottom: 2em;
-        row-gap: 1.5em;
     }
     .instructions-top-row, .ingredients-top-row, .instructions-top-row-buttons {
         flex-direction: column;
