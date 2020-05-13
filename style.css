@@ -4,6 +4,10 @@ body {
     background-color: rgb(200, 200, 255, 0.1);
 }
 
+figure {
+    margin: 0;
+}
+
 .image-container {
     display: flex;
     transition: all 0.2s ease-in-out;
@@ -13,10 +17,30 @@ body {
 
 .image-content {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-@media (min-width: 600px) {
+.profile-container {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.5em solid grey;
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1), 0 4px 8px 0 rgb(0, 0, 0, 0.3);
+}
+
+.profile-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vertical-align-text {
+    margin: auto;
+}
+
+@media screen and (min-width: 600px) {
     .image-container:hover {
         transform: scale(1.02);
     }
@@ -25,12 +49,22 @@ body {
         column-gap: 2em;
         grid-template-columns: 1fr 1fr;
     }
+    .about-container {
+        display: grid;
+        grid-template-columns: fit-content(100%) auto;
+        column-gap: 2em;
+    }
 }
 
-@media (max-width: 599px) {
+@media screen and (max-width: 599px) {
     .project-row {
         display: grid;
         column-gap: 2em;
         grid-template-rows: 50vw auto;
+    }
+    .about-container {
+        display: grid;
+        grid-template-rows: fit-content(100%) auto;
+        row-gap: 2em;
     }
 }
