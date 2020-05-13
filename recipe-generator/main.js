@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event) => {
     addRecipeAPIEventListeners();
-    parseRecipeResults(dinner_postman_response, "http://www.cookincanuck.com/2013/09/stuffed-sweet-potato-recipe-with-spinach-hummus-feta/");
+    parseRecipeResults(chicken_pot_pie_response, "http://www.cookincanuck.com/2013/09/stuffed-sweet-potato-recipe-with-spinach-hummus-feta/");
 });
 
 let API_KEY = '1c58d3fa753f4eee81a548c4aadc17fa';
@@ -216,6 +216,8 @@ function handleRecipeExtraction(sourceURL) {
         parseRecipeResults(results, sourceURL);
     }).catch((err) => {
         console.log("ERROR:\t", err);
+        removeSearchingElement();
+        handleNotice("Error", false);
     });
 }
 
@@ -301,16 +303,22 @@ function loadIngredients(ingredientsList) {
 
         //2. Set Data Attributes
         let newIngredientParent = newIngredientItem.querySelector("article");
-        newIngredientParent.setAttribute("data-aisle", item["aisle"].split(";").join(","));
+        if (item["aisle"] != null) {
+            newIngredientParent.setAttribute("data-aisle", item["aisle"].split(";").join(","));
+            let ingredientTag = newIngredientItem.querySelector(".ingredient-tag");
+            ingredientTag.textContent = item["aisle"].split(";").join(", ");
+        }
         newIngredientParent.setAttribute("data-name", item["name"]);
 
         //3. Load Aisle Tag
-        let ingredientTag = newIngredientItem.querySelector(".ingredient-tag");
-        ingredientTag.textContent = item["aisle"].split(";").join(", ");
+        
 
         //4. Load Image
-        let imageURL = INGREDIENT_BASE_URL + item["image"].toString();
-        newIngredientItem.querySelector(".ingredient-image").setAttribute("src", imageURL);
+        if (item["image"] != null) {
+            let imageURL = INGREDIENT_BASE_URL + item["image"].toString();
+            newIngredientItem.querySelector(".ingredient-image").setAttribute("src", imageURL);
+        }
+       
 
         //5. Load Ingredient Amount
         newIngredientItem.querySelector(".ingredient-name").textContent = item["name"];
@@ -1283,3 +1291,714 @@ quesadilla_postman_response = {
     "originalId": null
 }
 
+chicken_pot_pie_response = {
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "dairyFree": false,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": true,
+    "sustainable": false,
+    "weightWatcherSmartPoints": 15,
+    "gaps": "no",
+    "lowFodmap": false,
+    "preparationMinutes": 20,
+    "cookingMinutes": 30,
+    "aggregateLikes": 908,
+    "spoonacularScore": 69.0,
+    "healthScore": 8.0,
+    "pricePerServing": 118.02,
+    "extendedIngredients": [
+        {
+            "id": 11362,
+            "aisle": null,
+            "image": null,
+            "consistency": null,
+            "name": "potato",
+            "original": "1 cup peeled and diced potato",
+            "originalString": "1 cup peeled and diced potato",
+            "originalName": "peeled and diced potato",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [
+                "diced",
+                "peeled"
+            ],
+            "metaInformation": [
+                "diced",
+                "peeled"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "cup",
+                    "unitLong": "cup"
+                },
+                "metric": {
+                    "amount": 236.588,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 11124,
+            "aisle": "Produce",
+            "image": "sliced-carrot.png",
+            "consistency": "solid",
+            "name": "carrot",
+            "original": "3/4 cup sliced carrot",
+            "originalString": "3/4 cup sliced carrot",
+            "originalName": "sliced carrot",
+            "amount": 0.75,
+            "unit": "cup",
+            "meta": [
+                "sliced"
+            ],
+            "metaInformation": [
+                "sliced"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.75,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 177.441,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 1001,
+            "aisle": "Milk, Eggs, Other Dairy",
+            "image": "butter-sliced.jpg",
+            "consistency": "solid",
+            "name": "butter",
+            "original": "1/2 cup butter",
+            "originalString": "1/2 cup butter",
+            "originalName": "butter",
+            "amount": 0.5,
+            "unit": "cup",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 118.294,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 11282,
+            "aisle": "Produce",
+            "image": "brown-onion.png",
+            "consistency": "solid",
+            "name": "onion",
+            "original": "2/3 cup diced onion",
+            "originalString": "2/3 cup diced onion",
+            "originalName": "diced onion",
+            "amount": 0.6666666666666666,
+            "unit": "cup",
+            "meta": [
+                "diced"
+            ],
+            "metaInformation": [
+                "diced"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.667,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 157.725,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 2047,
+            "aisle": "Spices and Seasonings",
+            "image": "salt.jpg",
+            "consistency": "solid",
+            "name": "salt",
+            "original": "1 1/4 teaspoon salt",
+            "originalString": "1 1/4 teaspoon salt",
+            "originalName": "salt",
+            "amount": 1.25,
+            "unit": "teaspoon",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 1.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 1002030,
+            "aisle": "Spices and Seasonings",
+            "image": "pepper.jpg",
+            "consistency": "solid",
+            "name": "ground pepper",
+            "original": "1/2 teaspoon ground pepper",
+            "originalString": "1/2 teaspoon ground pepper",
+            "originalName": "ground pepper",
+            "amount": 0.5,
+            "unit": "teaspoon",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 2042,
+            "aisle": "Spices and Seasonings",
+            "image": "thyme.jpg",
+            "consistency": "solid",
+            "name": "dried thyme",
+            "original": "1/4 teaspoon dried thyme",
+            "originalString": "1/4 teaspoon dried thyme",
+            "originalName": "dried thyme",
+            "amount": 0.25,
+            "unit": "teaspoon",
+            "meta": [
+                "dried"
+            ],
+            "metaInformation": [
+                "dried"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 2034,
+            "aisle": "Spices and Seasonings",
+            "image": "seasoning.jpg",
+            "consistency": "solid",
+            "name": "poultry seasoning",
+            "original": "1/4 teaspoon poultry seasoning",
+            "originalString": "1/4 teaspoon poultry seasoning",
+            "originalName": "poultry seasoning",
+            "amount": 0.25,
+            "unit": "teaspoon",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 20081,
+            "aisle": "Baking",
+            "image": "flour.png",
+            "consistency": "solid",
+            "name": "flour",
+            "original": "1/2 cup all-purpose flour",
+            "originalString": "1/2 cup all-purpose flour",
+            "originalName": "all-purpose flour",
+            "amount": 0.5,
+            "unit": "cup",
+            "meta": [
+                "all-purpose"
+            ],
+            "metaInformation": [
+                "all-purpose"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 118.294,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 6194,
+            "aisle": "Canned and Jarred",
+            "image": "chicken-broth.png",
+            "consistency": "liquid",
+            "name": "chicken broth",
+            "original": "1 1/2 cups chicken broth",
+            "originalString": "1 1/2 cups chicken broth",
+            "originalName": "chicken broth",
+            "amount": 1.5,
+            "unit": "cups",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.5,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 354.882,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 1077,
+            "aisle": "Milk, Eggs, Other Dairy",
+            "image": "milk.png",
+            "consistency": "liquid",
+            "name": "milk",
+            "original": "1 cup milk",
+            "originalString": "1 cup milk",
+            "originalName": "milk",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "cup",
+                    "unitLong": "cup"
+                },
+                "metric": {
+                    "amount": 236.588,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 5348,
+            "aisle": null,
+            "image": null,
+            "consistency": null,
+            "name": "rotisserie chicken",
+            "original": "3 cups shredded chicken from a rotisserie chicken",
+            "originalString": "3 cups shredded chicken from a rotisserie chicken",
+            "originalName": "shredded chicken from a rotisserie chicken",
+            "amount": 3.0,
+            "unit": "cups",
+            "meta": [
+                "shredded"
+            ],
+            "metaInformation": [
+                "shredded"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 3.0,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 709.764,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 11304,
+            "aisle": "Produce",
+            "image": "peas.jpg",
+            "consistency": "solid",
+            "name": "peas",
+            "original": "1 cup peas",
+            "originalString": "1 cup peas",
+            "originalName": "peas",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "cup",
+                    "unitLong": "cup"
+                },
+                "metric": {
+                    "amount": 236.588,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 18334,
+            "aisle": "Refrigerated",
+            "image": "pie-crust.jpg",
+            "consistency": "solid",
+            "name": "refrigerated pie crusts",
+            "original": "2 refrigerated pie crusts",
+            "originalString": "2 refrigerated pie crusts",
+            "originalName": "refrigerated pie crusts",
+            "amount": 2.0,
+            "unit": "",
+            "meta": [
+                "refrigerated"
+            ],
+            "metaInformation": [
+                "refrigerated"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 2.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 2.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        },
+        {
+            "id": 1123,
+            "aisle": "Milk, Eggs, Other Dairy",
+            "image": "egg.png",
+            "consistency": "solid",
+            "name": "egg",
+            "original": "1 egg beaten together with 1 tablespoon water to make an egg wash",
+            "originalString": "1 egg beaten together with 1 tablespoon water to make an egg wash",
+            "originalName": "egg beaten together with 1 tablespoon water to make an egg wash",
+            "amount": 1.0,
+            "unit": "",
+            "meta": [
+                "with 1 tablespoon water to make an egg wash",
+                "beaten"
+            ],
+            "metaInformation": [
+                "with 1 tablespoon water to make an egg wash",
+                "beaten"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        }
+    ],
+    "id": 519078,
+    "title": "Easy Chicken Pot Pie",
+    "readyInMinutes": 50,
+    "servings": 8,
+    "sourceUrl": "https://spicysouthernkitchen.com/easy-chicken-pot-pie/",
+    "image": "https://spoonacular.com/recipeImages/519078-556x370.jpg",
+    "imageType": "jpg",
+    "summary": "You can never have too many main course recipes, so give Easy Chicken Pot Pie a try. This recipe makes 8 servings with <b>472 calories</b>, <b>19g of protein</b>, and <b>28g of fat</b> each. For <b>$1.18 per serving</b>, this recipe <b>covers 17%</b> of your daily requirements of vitamins and minerals. 908 people found this recipe to be flavorful and satisfying. If you have onion, chicken from a rotisserie chicken, milk, and a few other ingredients on hand, you can make it. It is brought to you by Spicy Southern Kitchen. From preparation to the plate, this recipe takes about <b>50 minutes</b>. Overall, this recipe earns a <b>pretty good spoonacular score of 62%</b>. Similar recipes include <a href=\"https://spoonacular.com/recipes/easy-chicken-pot-pie-826913\">Easy Chicken Pot Pie</a>, <a href=\"https://spoonacular.com/recipes/easy-chicken-pot-pie-641901\">Easy Chicken Pot Pie</a>, and <a href=\"https://spoonacular.com/recipes/easy-chicken-pot-pie-135309\">Easy Chicken Pot Pie</a>.",
+    "cuisines": [],
+    "dishTypes": [
+        "lunch",
+        "main course",
+        "main dish",
+        "dinner"
+    ],
+    "diets": [],
+    "occasions": [],
+    "winePairing": {
+        "pairedWines": [],
+        "pairingText": "",
+        "productMatches": []
+    },
+    "instructions": "Instructions\n\nPreheat oven to 425 degrees.\n\nPlace potatoes and carrots in a small saucepan, cover with water, and bring to a boil for 5-8 minutes to soften. Drain.\n\nMelt 1/2 cup butter in a large saut pan. Add onions and saut for 2 to 3 minutes.\n\nAdd salt, pepper, thyme, and poultry seasoning. Sprinkle flour on top and cook for 1 minute, stirring to evenly cook the flour.\n\nGradually whisk in chicken broth and then milk. Add potatoes and carrots and let simmer for a few minutes to thicken. Check for seasoning and add more salt and pepper if desired.\n\nStir in chicken and peas. Turn heat off.\n\nFit 1 pie crust into the bottom of a deep dish pie plate. Pour filling into pie shell.\n\nPlace second pie crust on top and trim excess. Press the two pie crusts together to seal and crimp edge using your fingers.\n\nBrush egg white on top of the pot pie and use a knife to cut 4 slits to let steam escape.\n\nPlace on a baking sheet and place in oven and bake for 30 minutes.",
+    "analyzedInstructions": [
+        {
+            "name": "",
+            "steps": [
+                {
+                    "number": 1,
+                    "step": "Preheat oven to 425 degrees.",
+                    "ingredients": [],
+                    "equipment": [
+                        {
+                            "id": 404784,
+                            "name": "oven",
+                            "image": "oven.jpg"
+                        }
+                    ]
+                },
+                {
+                    "number": 2,
+                    "step": "Place potatoes and carrots in a small saucepan, cover with water, and bring to a boil for 5-8 minutes to soften.",
+                    "ingredients": [
+                        {
+                            "id": 11124,
+                            "name": "carrot",
+                            "image": "sliced-carrot.png"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404669,
+                            "name": "sauce pan",
+                            "image": "sauce-pan.jpg"
+                        }
+                    ],
+                    "length": {
+                        "number": 8,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 3,
+                    "step": "Drain.",
+                    "ingredients": [],
+                    "equipment": []
+                },
+                {
+                    "number": 4,
+                    "step": "Melt 1/2 cup butter in a large saut pan.",
+                    "ingredients": [
+                        {
+                            "id": 1001,
+                            "name": "butter",
+                            "image": "butter-sliced.jpg"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404645,
+                            "name": "frying pan",
+                            "image": "pan.png"
+                        }
+                    ]
+                },
+                {
+                    "number": 5,
+                    "step": "Add onions and saut for 2 to 3 minutes.",
+                    "ingredients": [
+                        {
+                            "id": 11282,
+                            "name": "onion",
+                            "image": "brown-onion.png"
+                        }
+                    ],
+                    "equipment": [],
+                    "length": {
+                        "number": 2,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 6,
+                    "step": "Add salt, pepper, thyme, and poultry seasoning. Sprinkle flour on top and cook for 1 minute, stirring to evenly cook the flour.",
+                    "ingredients": [
+                        {
+                            "id": 2034,
+                            "name": "poultry seasoning",
+                            "image": "seasoning.jpg"
+                        },
+                        {
+                            "id": 1002030,
+                            "name": "pepper",
+                            "image": "pepper.jpg"
+                        },
+                        {
+                            "id": 20081,
+                            "name": "all purpose flour",
+                            "image": "flour.png"
+                        },
+                        {
+                            "id": 2047,
+                            "name": "salt",
+                            "image": "salt.jpg"
+                        }
+                    ],
+                    "equipment": [],
+                    "length": {
+                        "number": 1,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 7,
+                    "step": "Gradually whisk in chicken broth and then milk.",
+                    "ingredients": [
+                        {
+                            "id": 6194,
+                            "name": "chicken broth",
+                            "image": "chicken-broth.png"
+                        },
+                        {
+                            "id": 1077,
+                            "name": "milk",
+                            "image": "milk.png"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404661,
+                            "name": "whisk",
+                            "image": "whisk.png"
+                        }
+                    ]
+                },
+                {
+                    "number": 8,
+                    "step": "Add potatoes and carrots and let simmer for a few minutes to thicken. Check for seasoning and add more salt and pepper if desired.",
+                    "ingredients": [
+                        {
+                            "id": 1102047,
+                            "name": "salt and pepper",
+                            "image": "salt-and-pepper.jpg"
+                        },
+                        {
+                            "id": 11124,
+                            "name": "carrot",
+                            "image": "sliced-carrot.png"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 9,
+                    "step": "Stir in chicken and peas. Turn heat off.",
+                    "ingredients": [
+                        {
+                            "id": 11304,
+                            "name": "peas",
+                            "image": "peas.jpg"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 10,
+                    "step": "Fit 1 pie crust into the bottom of a deep dish pie plate.",
+                    "ingredients": [
+                        {
+                            "id": 18334,
+                            "name": "pie crust",
+                            "image": "pie-crust.jpg"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 11,
+                    "step": "Pour filling into pie shell.",
+                    "ingredients": [
+                        {
+                            "id": 18334,
+                            "name": "pie crust",
+                            "image": "pie-crust.jpg"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 12,
+                    "step": "Place second pie crust on top and trim excess. Press the two pie crusts together to seal and crimp edge using your fingers.",
+                    "ingredients": [
+                        {
+                            "id": 18334,
+                            "name": "pie crust",
+                            "image": "pie-crust.jpg"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 13,
+                    "step": "Brush egg white on top of the pot pie and use a knife to cut 4 slits to let steam escape.",
+                    "ingredients": [],
+                    "equipment": [
+                        {
+                            "id": 404745,
+                            "name": "knife",
+                            "image": "chefs-knife.jpg"
+                        },
+                        {
+                            "id": 404752,
+                            "name": "pot",
+                            "image": "stock-pot.jpg"
+                        }
+                    ]
+                },
+                {
+                    "number": 14,
+                    "step": "Place on a baking sheet and place in oven and bake for 30 minutes.",
+                    "ingredients": [],
+                    "equipment": [
+                        {
+                            "id": 404727,
+                            "name": "baking sheet",
+                            "image": "baking-sheet.jpg"
+                        },
+                        {
+                            "id": 404784,
+                            "name": "oven",
+                            "image": "oven.jpg"
+                        }
+                    ],
+                    "length": {
+                        "number": 30,
+                        "unit": "minutes"
+                    }
+                }
+            ]
+        }
+    ],
+    "sourceName": null,
+    "creditsText": null,
+    "originalId": null
+}
