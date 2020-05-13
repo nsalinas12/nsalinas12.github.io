@@ -74,6 +74,7 @@ function addGeneralEventListeners() {
     addButtonEventListeners();
     addSelectEventListeners();
     addInstructionsEventListeners();
+    addMobileEventListeners();
 }
 
 function addButtonEventListeners() {
@@ -399,6 +400,40 @@ function loadIcons(iconItems, title, parent) {
 
         iconViewerItems.appendChild(newIconContainer);
     });
+}
+
+function addMobileEventListeners() {
+
+    let ingredientCards = Array.from(document.querySelectorAll(".ingredient-item"));
+    ingredientCards.map((card) => {
+        card.addEventListener("click", () => {
+            if (window.innerWidth <= 490) {
+                console.log("click");
+                if (card.classList.contains("ingredient-item-selected")) {
+                    card.classList.remove("ingredient-item-selected");
+                } else {
+                    card.classList.add("ingredient-item-selected");
+                }
+
+                let image = card.querySelector(".ingredient-image");
+                if (image.classList.contains("opaque")) {
+                    image.classList.remove("opaque");
+                } else {
+                    image.classList.add("opaque");
+                }
+
+                let button = card.querySelector(".ingredient-button");
+                if (button.classList.contains("ingredient-button-selected")) {
+                    button.classList.remove("ingredient-button-selected");
+                } else {
+                    button.classList.add("ingredient-button-selected");
+                }
+
+                let hovers = card.querySelector(':hover');
+                console.log("hovers:\t", hovers);
+            }
+        });
+    });    
 }
 
 /*********************************/

@@ -76,7 +76,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 2em;
     row-gap: 1.5em;
-    padding: 1em;
+    margin: 1em;
 }
 
 .ingredient-details {
@@ -415,7 +415,7 @@ p {
     }
 }
 
-@media(max-width: 870px) {
+@media screen and (max-width: 870px) {
     .ingredient-container {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -432,7 +432,7 @@ p {
     }
 }
 
-@media(max-width: 710px) {
+@media screen and (max-width: 710px) {
     .ingredient-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -448,7 +448,7 @@ p {
     }
 }
 
-@media(max-width: 490px) {
+@media screen and (max-width: 490px) {
     .searchbar-container {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 80vw;
@@ -484,6 +484,9 @@ p {
     }
     .instruction-viewer-items {
         display: grid;
+    }
+    .ingredient-button{
+        visibility: hidden;
     }
 }
 
