@@ -29,7 +29,6 @@ hr {
 
 main {
     color: var(--darker-color);
-    padding: 3vh 3vw;
     margin: auto;
     max-width: 80vw;
     min-width: 80vw;
@@ -456,6 +455,9 @@ p {
     .searchbar-button-item {
         font-size: 1.5em;
     }
+    .instruction-container{
+        grid-template-columns: 80vw;
+    } 
     .ingredient-container {
         column-gap: 1.5em;
         display: grid;
@@ -470,7 +472,7 @@ p {
         margin: 0.7em auto;
     }
     .instruction-item-grid {
-        grid-template-columns: fit-content(100%) 70vw;
+        grid-template-columns: fit-content(100%) auto;
     }
     .instruction-content, .instruction-images {
         display: flex;
