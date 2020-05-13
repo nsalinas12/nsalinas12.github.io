@@ -44,6 +44,7 @@ function removeSearchingElement() {
         bodyElement.removeChild(SEARCHING_ELEMENT);
         bodyElement.removeAttribute("class");
     }
+    window.scrollTo(0, 0); 
 }
 
 function addRecipeAPIEventListeners() {
