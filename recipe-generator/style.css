@@ -163,6 +163,7 @@ p {
     display: grid;
     margin-top: 1em;
     row-gap: 2em;
+    grid-template-columns: 80vw;
 }
 
 .instruction-content {
@@ -173,12 +174,13 @@ p {
 .instruction-images, .instruction-viewer-items {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .instruction-item-grid {
     display: grid;
-    grid-template-columns: repeat(2, fit-content(100%));
     row-gap: 3em;
+    grid-template-columns: fit-content(100%) auto;
 }
 
 .instruction-number {
@@ -186,10 +188,10 @@ p {
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-weight: bolder;
-    margin-right: 1em;
     max-height: 1em;
     min-width: 1em;
     padding: 1em;
+    margin: 0 1em;
     text-align: center;
     transition: all 0.2s ease-in-out;
     border: 2px solid var(--secondary-color);
@@ -223,13 +225,13 @@ p {
 .instruction-viewer {
     align-items: center;
     background-color: white;
-    /*box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);*/
     border: 2px solid var(--secondary-color);
     display: flex;
     flex-direction: column;
     margin-right: 1em;
     padding: 1em;
     transition: all 0.2s ease-in-out;
+    width: fit-content;
 }
 
 .instruction-viewer-icon {
@@ -242,7 +244,7 @@ p {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 0.4em;
-    padding: 0.2em;
+    padding: 0.5em;
 }
 
 .instruction-viewer-title, .instruction-viewer-title {
@@ -444,6 +446,13 @@ p {
     .ingredient-grid-left {
         margin: auto;
     }
+    .instruction-images {
+        flex-direction: column;
+    }
+    .instruction-viewer{
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
 }
 
 @media(max-width: 490px) {
@@ -455,9 +464,6 @@ p {
     .searchbar-button-item {
         font-size: 1.5em;
     }
-    .instruction-container{
-        grid-template-columns: 80vw;
-    } 
     .ingredient-container {
         column-gap: 1.5em;
         display: grid;
@@ -470,9 +476,6 @@ p {
     }
     .ingredients-select {
         margin: 0.7em auto;
-    }
-    .instruction-item-grid {
-        grid-template-columns: fit-content(100%) auto;
     }
     .instruction-content, .instruction-images {
         display: flex;
@@ -490,7 +493,6 @@ p {
     }
     .instruction-viewer-items {
         display: grid;
-        ;
     }
 }
 
