@@ -443,7 +443,7 @@ p {
     .instruction-images {
         flex-direction: column;
     }
-    .instruction-viewer{
+    .instruction-viewer {
         margin-right: 0;
         margin-bottom: 1em;
     }
@@ -457,6 +457,8 @@ p {
     }
     .searchbar-button-item {
         font-size: 1.5em;
+        color: black;
+        background-color: #F4F4F9;
     }
     .ingredient-container {
         grid-template-columns: repeat(1, 1fr);
