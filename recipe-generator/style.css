@@ -366,7 +366,7 @@ p {
     background-color: white;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0.25em;
 }
 
@@ -450,12 +450,11 @@ p {
 
 @media screen and (max-width: 490px) {
     .searchbar-container {
-        grid-template-rows: 1fr auto;
-        grid-template-columns: 80vw;
+        grid-template-columns: auto fit-content(100%);
         row-gap: 1em;
     }
     .searchbar-button-item {
-        font-size: 1.5em;
+        font-size: 1em;
         color: black;
         background-color: #F4F4F9;
     }
@@ -485,9 +484,8 @@ p {
     .instruction-viewer-items {
         display: grid;
     }
-    .ingredient-button, .searchbar-button-container {
+    .ingredient-button {
         visibility: hidden;
-        display: none;
     }
 }
 
