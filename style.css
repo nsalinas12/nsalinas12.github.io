@@ -1,12 +1,14 @@
 body {
     font-family: 'Quicksand', sans-serif;
-    background: rgba(50, 122, 255, 0.822);
     color: white;
     margin: auto;
     overscroll-behavior: none;
     display: flex;
     min-height: 100vh;
     min-width: 100vw;
+    background: linear-gradient(270deg, #4aaace, #30c592, #c5a130, #d96e3c, #703cd9);
+    background-size: 1000% 1000%;
+    animation: BackgroundGradient 10s ease infinite;
 }
 
 hr {
@@ -82,10 +84,11 @@ a {
     object-fit: cover;
 }
 
-.home-page-body{
+.home-page-body {
     flex-direction: column;
 }
- .home-page-main {
+
+.home-page-main {
     max-width: 80vw;
     margin: auto;
     display: flex;
@@ -110,4 +113,16 @@ a {
 
 .main-footer-item:hover {
     transform: scale(1.1);
+}
+
+@keyframes BackgroundGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
