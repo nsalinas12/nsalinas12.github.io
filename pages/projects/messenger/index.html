@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>DFTW Chat Client</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="index.js" type="module"></script>
+</head>
+<body>
+	<!-- Login Form -->
+	<dialog id="loginDialog">
+		<form id="loginForm" method="dialog">
+			<p>
+				<label>Email:
+					<input autocomplete="email" type="text" name="email" required />
+				</label>
+			</p>
+			<p>
+				<label>Password:
+					<input autocomplete="current-password" type="password" name="password" required />
+				</label>
+			</p>
+			<p>
+				<button type="reset">Cancel</button>
+				<button>Login</button>
+			</p>
+			<p>
+				<span class="error" aria-live="polite"></span>
+			</p>
+		</form>
+	</dialog>
+	<!-- SignUp Form -->
+	<dialog id="signUpDialog">
+		<form id="signUpForm" method="dialog">
+			<p>
+				<label>Alias:
+					<input type="text" name="alias" required />
+				</label>
+			</p>
+			<p>
+				<label>Email:
+					<input autocomplete="email" type="email" name="email" required />
+				</label>
+			</p>
+			<p>
+				<label>Password:
+					<input autocomplete="new-password" type="password" name="password" required />
+				</label>
+			</p>
+			<p>
+				<button type="reset">Cancel</button>
+				<button>Send</button>
+			</p>
+			<p>
+				<span class="error" aria-live="polite"></span>
+			</p>
+		</form>
+	</dialog>
+	<!-- New Message Form -->
+	<dialog id="newMessageDialog">
+		<form id="newMessageForm" method="dialog">
+			<p>
+				<label>Alias:
+					<input type="text" name="alias" required />
+				</label>
+			</p>
+			<p>
+				<label>Message:
+					<textarea id="new-message-input" type="text" name="new-message" required></textarea>
+				</label>
+			</p>
+			<p>
+				<button type="reset">Cancel</button>
+				<button>Send Message</button>
+			</p>
+			<p>
+				<span class="error" aria-live="polite"></span>
+			</p>
+		</form>
+	</dialog>
+	<div class="page-content">
+		<div class="action-bar-container">
+			<div class="action-bar-title">
+				<a href="index.html">DFTW Messenger</a>
+			</div>
+			<div class="button-container">
+				<div id="aliasContainer">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="settings-button">Settings</button>
+				<div class="dropdown-content">
+					<span class="dropdown-items"></span>
+					<hr class="dropdown-divider">
+					<span class="action-items">
+						<a class="action-button" id="loginButton">Log In</a>
+						<a class="action-button" id="signUpButton">Sign Up</a>
+						<a class="action-button" id="logoutButton">Log Out</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<main class="main-container">
+			<div class="left-rail">
+				<div id="create-new-message-button" class="left-new-message isHidden">
+					Create New Message
+				</div>
+				<div class="left-container">
+				</div>
+			</div>
+			<div id="rightContainer" class="right-container isHidden">
+				<div class="right-header">
+					<h1 class="right-header-title"></h2>
+				</div>
+				<div class="right-conversation-viewer">
+				</div>
+				<div class="right-input-row">
+					<div class="right-input-row-left">
+						<textarea placeholder="Subject:" id="subject-input" class="right-subject-input" type="text"></textarea>
+						<textarea placeholder="Message:" id="message-input" class="right-input-text" type="text"></textarea>
+					</div>
+					<div class="right-input-row-right">
+						<button id="message-submit" class="right-send-button">Send</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

@@ -14,5 +14,9 @@ body {
 
 .projects-hscroll {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.project-item {
+    margin-bottom: 2em;
 }
