@@ -2,13 +2,8 @@ body {
     flex-direction: column;
 }
 
-main {
-    margin: 2em auto;
-}
-
 .project-container {
     display: flex;
-    max-width: 50vw;
 }
 
 .project-content {
