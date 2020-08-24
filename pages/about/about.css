@@ -1,3 +1,7 @@
 body {
     flex-direction: column;
 }
+
+.about-container{
+    margin: 2em;
+}
