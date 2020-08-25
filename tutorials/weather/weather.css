@@ -1,0 +1,27 @@
+#results-container {
+    margin: auto;
+    padding: 1em 2em;
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+#results-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-city {
+    margin: 0 0 0.5em 0;
+}
+
+.results-description {
+    margin: 0 0 1em 0;
+}
+
+.results-temperature {
+    margin: 0 0 1em 0;
+}

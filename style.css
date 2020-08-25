@@ -4,6 +4,7 @@ body {
     margin: auto;
     overscroll-behavior: none;
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     min-width: 100vw;
     background: linear-gradient(270deg, #4aaace, #30c592, #c5a130, #d96e3c, #703cd9);
