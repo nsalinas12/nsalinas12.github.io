@@ -25,3 +25,42 @@
 .results-temperature {
     margin: 0 0 1em 0;
 }
+
+.weather-input {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5em;
+}
+
+.weather-input:focus {
+    outline: none;
+}
+
+.weather-input:hover {
+    transform: scale(1.02);
+}
+
+.weather-button {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    outline: none;
+    padding: 0.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.weather-button:hover {
+    background-color: rgba(8, 250, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+.isHidden {
+    visibility: hidden;
+}
