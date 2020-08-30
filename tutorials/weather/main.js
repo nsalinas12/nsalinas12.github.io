@@ -1,5 +1,5 @@
 const API_KEY = "a8d296a5c03cb3bb051d49b4b23a75a6";
-const BASE_URI = "http://api.weatherstack.com/current";
+const BASE_URI = "https://api.weatherstack.com/current";
 
 let hasResults = false;
 
